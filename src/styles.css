@@ -2,3 +2,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    color:white;
+    height:100%;
+    font-family: 'CustomFont';
+        src: url('../public/Inquisition-J4mM.ttf');
+    font-weight: bold;
+}
