@@ -1,0 +1,13 @@
+.custom-border{
+  
+    border: 5px double #CE965A;
+}
+
+.custom-card{
+    background: rgba(40, 56, 81, 0.20);
+    border-radius: 10px;
+box-shadow: 0 5px 30px rgba(0, 0, 0, 0.377);
+backdrop-filter: blur(4.4px);
+-webkit-backdrop-filter: blur(4.4px);
+border: 1px solid rgba(40, 56, 81, 1);
+}

@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +11,10 @@ import { OriginsComponent } from './components/origins/origins.component';
 import { DaIIComponent } from './components/da-ii/da-ii.component';
 import { InquisitionComponent } from './components/inquisition/inquisition.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { provideHttpClient } from '@angular/common/http';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import { MatCardModule } from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,15 +22,14 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
     OriginsComponent,
     DaIIComponent,
     InquisitionComponent,
-    WelcomeComponent
+    WelcomeComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, MatCardModule],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(),
+    provideAnimationsAsync(),
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
