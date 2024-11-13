@@ -1,1 +1,19 @@
-<p>inquisition works!</p>
+<div class="ms-5">
+  <h2 class="my-10 ps-3 text-2xl">Personaggi</h2>
+  <div class="flex flex-wrap mt-5">
+    <mat-card
+      *ngFor="let character of characterData"
+      class="w-1/6 my-5 mx-2 h-72 flex flex-col items-center justify-between custom-card"
+    >
+      <img
+        mat-card-image
+        [src]="character.image_url"
+        alt="{{ character.name }}"
+        *ngIf="character.image_url"
+        class="pt-5"
+        style="height: 232px; width: 156px"
+      />
+      <p class="py-2">{{ character.name }}</p>
+    </mat-card>
+  </div>
+</div>

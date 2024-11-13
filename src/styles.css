@@ -5,10 +5,12 @@
 
 body{
     color:white;
-    height:100%;
+    margin: 0; 
     font-family: 'CustomFont';
         src: url('../public/Inquisition-J4mM.ttf');
     font-weight: bold;
+
 }
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
