@@ -15,6 +15,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { MatCardModule } from '@angular/material/card';
+import { NotfoundComponent } from './components/notfound/notfound.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +24,7 @@ import { MatCardModule } from '@angular/material/card';
     DaIIComponent,
     InquisitionComponent,
     WelcomeComponent,
+    NotfoundComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, MatCardModule],
   providers: [
