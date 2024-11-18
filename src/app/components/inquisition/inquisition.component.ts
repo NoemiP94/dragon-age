@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
 import { firstValueFrom } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inquisition',
@@ -10,7 +11,7 @@ import { firstValueFrom } from 'rxjs';
 export class InquisitionComponent implements OnInit {
   characterData: any[] = [];
 
-  constructor(private games: GameService) {}
+  constructor(private games: GameService, private router: Router) {}
 
   ngOnInit(): void {
     this.getData(3);
@@ -24,5 +25,10 @@ export class InquisitionComponent implements OnInit {
     } catch (error) {
       console.error('Error in the request', error);
     }
+  }
+
+  getDetail(id: number): void {
+    console.log(id);
+    this.router.navigate(['/detail', id]);
   }
 }

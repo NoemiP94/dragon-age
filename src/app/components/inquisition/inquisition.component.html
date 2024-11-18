@@ -4,16 +4,19 @@
     <mat-card
       *ngFor="let character of characterData"
       class="w-1/6 my-5 mx-2 h-72 flex flex-col items-center justify-between custom-card"
+      (click)="getDetail(character.id)"
     >
-      <img
-        mat-card-image
-        [src]="character.image_url"
-        alt="{{ character.name }}"
-        *ngIf="character.image_url"
-        class="pt-5"
-        style="height: 232px; width: 156px"
-      />
-      <p class="py-2">{{ character.name }}</p>
+      <a [routerLink]="['/detail', character.id]">
+        <img
+          mat-card-image
+          [src]="character.image_url"
+          alt="{{ character.name }}"
+          *ngIf="character.image_url"
+          class="pt-5"
+          style="height: 232px; width: 156px"
+        />
+        <p class="py-2">{{ character.name }}</p>
+      </a>
     </mat-card>
   </div>
 </div>

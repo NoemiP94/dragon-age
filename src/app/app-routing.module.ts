@@ -6,6 +6,7 @@ import { DaIIComponent } from './components/da-ii/da-ii.component';
 import { InquisitionComponent } from './components/inquisition/inquisition.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
+import { CharDetailComponent } from './components/char-detail/char-detail.component';
 
 const routes: Routes = [
   {
@@ -14,11 +15,13 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: 'origins', component: OriginsComponent },
+      { path: 'detail/:id', component: CharDetailComponent },
       { path: 'da2', component: DaIIComponent },
       { path: 'inquisition', component: InquisitionComponent },
       { path: 'welcome', component: WelcomeComponent },
     ],
   },
+  { path: 'detail/:id', component: CharDetailComponent },
   { path: '404', component: NotfoundComponent },
   {
     path: '**',
