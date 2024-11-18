@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
+import { firstValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-origins',
@@ -8,12 +9,20 @@ import { GameService } from '../../services/game.service';
 })
 export class OriginsComponent implements OnInit {
   characterData: any[] = [];
-  game_id: number = 1;
   constructor(private games: GameService) {}
   ngOnInit(): void {
-    this.games.getCharacters(this.game_id).subscribe((data: any) => {
-      this.characterData = data;
-      console.log(data);
-    });
+    this.getData(1);
+  }
+
+  async getData(game_id: number): Promise<void> {
+    try {
+      this.characterData = await firstValueFrom(
+        //firstValueFrom => trasforma Observable in Promise
+        this.games.getCharacters(game_id)
+      );
+      console.log(this.characterData);
+    } catch (error) {
+      console.error('Error in the request', error);
+    }
   }
 }

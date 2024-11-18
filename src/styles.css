@@ -3,14 +3,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'CustomFont';
+    src: url('../public/Inquisition-J4mM.ttf') format('truetype');
+}
+
 body{
     color:white;
     margin: 0; 
-    font-family: 'CustomFont';
-        src: url('../public/Inquisition-J4mM.ttf');
-    font-weight: bold;
+    font-family: 'CustomFont', sans-serif !important;
+    background-image: url(../public/bg-tile.jpg);
 
 }
 html, body { height: 100%; }
+
+h2{
+    font-family: 'CustomFont', sans-serif !important; 
+}
 
 
