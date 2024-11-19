@@ -7,6 +7,7 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -31,7 +32,13 @@ import { CharDetailComponent } from './components/char-detail/char-detail.compon
     NotfoundComponent,
     CharDetailComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, MatCardModule, MatExpansionModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MatCardModule,
+    MatExpansionModule,
+    MatIconModule,
+  ],
   providers: [
     provideClientHydration(),
     provideHttpClient(),

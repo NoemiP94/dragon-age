@@ -17,7 +17,28 @@
       <p>Titolo: {{ character.title }}</p>
       <p>Affiliazione: {{ character.affiliation }}</p>
 
-      <p>Romance: {{ character.romanceable }}</p>
+      <p
+        *ngIf="character.romanceable; else brokenHeart"
+        class="flex items-center"
+      >
+        Romance:
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Example home icon"
+          fontIcon="favorite"
+          class="ms-4"
+        ></mat-icon>
+      </p>
+      <ng-template #brokenHeart
+        ><p class="flex items-center">
+          Romance:
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="heart_broken"
+            class="ms-4"
+          ></mat-icon></p
+      ></ng-template>
     </div>
   </div>
 </div>
