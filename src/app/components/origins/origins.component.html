@@ -6,7 +6,7 @@
       class="w-1/6 my-5 mx-2 h-72 flex flex-col items-center justify-between custom-card"
       (click)="getDetail(character.id)"
     >
-      <a [routerLink]="['/detail', character.id]">
+      <a [routerLink]="['/detail', character.id]" class="text-center">
         <img
           mat-card-image
           [src]="character.image_url"
