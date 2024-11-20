@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class OriginsComponent implements OnInit {
   characterData: any[] = [];
+  gameData: any[] = [];
   constructor(private games: GameService, private router: Router) {}
   ngOnInit(): void {
     this.getData(1);
@@ -30,5 +31,14 @@ export class OriginsComponent implements OnInit {
   getDetail(id: number): void {
     console.log(id);
     this.router.navigate(['/detail', id]);
+  }
+
+  async getGameDetail(game_id: number): Promise<void> {
+    try {
+      this.gameData = await firstValueFrom(this.games.getGameData(game_id));
+      console.log(this.gameData);
+    } catch (error) {
+      console.error('Error in the request', error);
+    }
   }
 }

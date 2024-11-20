@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class GameService {
   charactersUrl = 'http://localhost:8000/characters/game/';
   detailCharacterUrl = 'http://127.0.0.1:8000/characters/all/';
+  detailGameUrl = 'http://127.0.0.1:8000/games/detail/';
 
   constructor(private http: HttpClient) {}
 
@@ -18,7 +19,11 @@ export class GameService {
 
   getSingleCharacter(character_id: number): Observable<any[]> {
     const url = `${this.detailCharacterUrl}${character_id}/`;
-    console.log(url);
+    return this.http.get<any[]>(url);
+  }
+
+  getGameData(game_id: number): Observable<any[]> {
+    const url = `${this.detailGameUrl}${game_id}/`;
     return this.http.get<any[]>(url);
   }
 }
