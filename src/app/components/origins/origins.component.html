@@ -1,22 +1,78 @@
-<div class="ms-5">
-  <h2 class="pt-10 ps-3 text-2xl">Personaggi</h2>
-  <div class="flex flex-wrap mt-5">
-    <mat-card
-      *ngFor="let character of characterData"
-      class="w-1/6 my-5 mx-2 h-72 flex flex-col items-center justify-between custom-card"
-      (click)="getDetail(character.id)"
-    >
-      <a [routerLink]="['/detail', character.id]" class="text-center">
-        <img
-          mat-card-image
-          [src]="character.image_url"
-          alt="{{ character.name }}"
-          *ngIf="character.image_url"
-          class="pt-5"
-          style="height: 232px; width: 156px"
-        />
-        <p class="py-2">{{ character.name }}</p>
-      </a>
-    </mat-card>
+<div *ngIf="gameData">
+  <h1>{{ gameData.title }}</h1>
+  <div>
+    <p>Anno di uscita: {{ gameData.year }}</p>
+    <p>Engine: {{ gameData.engine }}</p>
+    <p>Modalità: {{ gameData.game_mode }}</p>
+  </div>
+  <div>
+    <img
+      mat-card-image
+      [src]="gameData.image_url"
+      alt="{{ gameData.title }}"
+      *ngIf="gameData.image_url"
+      class="pt-5"
+      style="height: 232px; width: 156px"
+    />
+  </div>
+  <div>
+    <h3>Trama</h3>
+    <p>{{ gameData.storyline }}</p>
+  </div>
+  <div>
+    <h3>Gameplay</h3>
+    <p>{{ gameData.gameplay }}</p>
+  </div>
+  <!-- characters -->
+  <div class="ms-5">
+    <h3 class="pt-10 ps-3 text-2xl">Personaggi</h3>
+    <div class="flex flex-wrap mt-5">
+      <mat-card
+        *ngFor="let character of characterData"
+        class="w-1/6 my-5 mx-2 h-72 flex flex-col items-center justify-between custom-card"
+        (click)="getDetail(character.id)"
+      >
+        <a [routerLink]="['/detail', character.id]" class="text-center">
+          <img
+            mat-card-image
+            [src]="character.image_url"
+            alt="{{ character.name }}"
+            *ngIf="character.image_url"
+            class="pt-5"
+            style="height: 232px; width: 156px"
+          />
+          <p class="py-2">{{ character.name }}</p>
+        </a>
+      </mat-card>
+    </div>
+  </div>
+  <!-- table -->
+  <div>
+    <h3>Requisiti di Sistema</h3>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef>Weight</th>
+        <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
   </div>
 </div>

@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { MatCardModule } from '@angular/material/card';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
 
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -38,6 +39,7 @@ import { CharDetailComponent } from './components/char-detail/char-detail.compon
     MatCardModule,
     MatExpansionModule,
     MatIconModule,
+    MatTableModule,
   ],
   providers: [
     provideClientHydration(),
