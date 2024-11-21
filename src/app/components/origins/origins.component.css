@@ -8,8 +8,13 @@
 }
 
 table {
-    width: 100%;
-    background-color: transparent;
+    background: rgba(86, 86, 87, 0.048);
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.377);
+    backdrop-filter: blur(4.4px);
+    -webkit-backdrop-filter: blur(4.4px);
+    border: 1px solid rgba(31, 32, 33, 1);
+    margin-top: 2rem;
   }
 
 tr{
@@ -18,3 +23,12 @@ tr{
 td{
     padding: 1rem;
 }
+
+tr td:first-child{
+    border-right: 1px solid white;
+}
+
+tr td:last-child{
+    border-left: 1px solid white;
+}
+

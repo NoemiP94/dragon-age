@@ -1,31 +1,34 @@
-<div *ngIf="gameData">
-  <h1>{{ gameData.title }}</h1>
-  <div>
-    <p>Anno di uscita: {{ gameData.year }}</p>
-    <p>Engine: {{ gameData.engine }}</p>
-    <p>Modalità: {{ gameData.game_mode }}</p>
+<div *ngIf="gameData" class="ms-5 ps-3">
+  <div class="flex mt-5">
+    <div>
+      <img
+        mat-card-image
+        [src]="gameData.image_url"
+        alt="{{ gameData.title }}"
+        *ngIf="gameData.image_url"
+        class="pt-3"
+        style="height: 300px; width: 200px"
+      />
+    </div>
+    <div class="ms-5">
+      <h1>{{ gameData.title }}</h1>
+      <p class="text-xl">Anno di uscita: {{ gameData.year }}</p>
+      <p class="text-xl">Engine: {{ gameData.engine }}</p>
+      <p class="text-xl">Modalità: {{ gameData.game_mode }}</p>
+    </div>
   </div>
-  <div>
-    <img
-      mat-card-image
-      [src]="gameData.image_url"
-      alt="{{ gameData.title }}"
-      *ngIf="gameData.image_url"
-      class="pt-5"
-      style="height: 232px; width: 156px"
-    />
-  </div>
-  <div>
+
+  <div class="mt-5">
     <h3>Trama</h3>
-    <p>{{ gameData.storyline }}</p>
+    <p [innerHTML]="gameData.storyline | backspace"></p>
   </div>
-  <div>
+  <div class="mt-5">
     <h3>Gameplay</h3>
-    <p>{{ gameData.gameplay }}</p>
+    <p [innerHTML]="gameData.gameplay | backspace"></p>
   </div>
   <!-- characters -->
-  <div class="ms-5">
-    <h3 class="pt-10 ps-3 text-2xl">Personaggi</h3>
+  <div class="mt-5">
+    <h3>Personaggi</h3>
     <div class="flex flex-wrap mt-5">
       <mat-card
         *ngFor="let character of characterData"
@@ -47,53 +50,53 @@
     </div>
   </div>
   <!-- table -->
-  <div>
+  <div class="mt-5">
     <h3>Requisiti di Sistema</h3>
     <table>
-      <th>
+      <thead>
         <tr>
           <td></td>
           <td>PC</td>
           <td>MAC</td>
         </tr>
-        <tbody>
-          <tr>
-            <td>OS</td>
-            <td [innerHTML]="gameData.pc_system_OS | backspace"></td>
-            <td>{{ gameData.mac_system_OS }}</td>
-          </tr>
-          <tr>
-            <td>CPU</td>
-            <td [innerHTML]="gameData.pc_system_CPU | backspace"></td>
-            <td>{{ gameData.mac_system_CPU }}</td>
-          </tr>
-          <tr>
-            <td>Ram</td>
-            <td [innerHTML]="gameData.pc_system_RAM | backspace"></td>
-            <td>{{ gameData.mac_system_RAM }}</td>
-          </tr>
-          <tr>
-            <td>Scheda Grafica</td>
-            <td [innerHTML]="gameData.pc_graphics_card | backspace"></td>
-            <td>{{ gameData.mac_graphics_card }}</td>
-          </tr>
-          <tr>
-            <td>Memoria Grafica</td>
-            <td [innerHTML]="gameData.pc_graphics_memory | backspace"></td>
-            <td>{{ gameData.mac_graphics_memory }}</td>
-          </tr>
-          <tr>
-            <td>Hard Drive</td>
-            <td [innerHTML]="gameData.pc_hard_drive | backspace"></td>
-            <td>{{ gameData.mac_hard_drive }}</td>
-          </tr>
-          <tr>
-            <td>Altro</td>
-            <td [innerHTML]="gameData.pc_other | backspace"></td>
-            <td>{{ gameData.mac_other }}</td>
-          </tr>
-        </tbody>
-      </th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>OS</td>
+          <td [innerHTML]="gameData.pc_system_OS | backspace"></td>
+          <td>{{ gameData.mac_system_OS }}</td>
+        </tr>
+        <tr>
+          <td>CPU</td>
+          <td [innerHTML]="gameData.pc_system_CPU | backspace"></td>
+          <td>{{ gameData.mac_system_CPU }}</td>
+        </tr>
+        <tr>
+          <td>Ram</td>
+          <td [innerHTML]="gameData.pc_system_RAM | backspace"></td>
+          <td>{{ gameData.mac_system_RAM }}</td>
+        </tr>
+        <tr>
+          <td>Scheda Grafica</td>
+          <td [innerHTML]="gameData.pc_graphics_card | backspace"></td>
+          <td>{{ gameData.mac_graphics_card }}</td>
+        </tr>
+        <tr>
+          <td>Memoria Grafica</td>
+          <td [innerHTML]="gameData.pc_graphics_memory | backspace"></td>
+          <td>{{ gameData.mac_graphics_memory }}</td>
+        </tr>
+        <tr>
+          <td>Hard Drive</td>
+          <td [innerHTML]="gameData.pc_hard_drive | backspace"></td>
+          <td>{{ gameData.mac_hard_drive }}</td>
+        </tr>
+        <tr>
+          <td>Altro</td>
+          <td [innerHTML]="gameData.pc_other | backspace"></td>
+          <td>{{ gameData.mac_other }}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </div>

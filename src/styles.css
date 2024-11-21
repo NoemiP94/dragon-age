@@ -5,14 +5,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @font-face {
     font-family: 'CustomFont';
     src: url('../public/Inquisition-J4mM.ttf') format('truetype');
 }
 
 body{
+    height: 100% !important;
     color:white;
     margin: 0; 
     font-family: 'CustomFont', sans-serif !important;

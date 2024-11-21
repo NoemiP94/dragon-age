@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
 import { firstValueFrom } from 'rxjs';
 import { Router } from '@angular/router';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-origins',
@@ -12,14 +11,8 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class OriginsComponent implements OnInit {
   characterData: any[] = [];
   gameData: any;
-  gameDataArray: any[] = [];
-  displayedColumns: string[] = ['data', 'pc', 'mac'];
 
-  constructor(
-    private games: GameService,
-    private router: Router,
-    private sanitizer: DomSanitizer
-  ) {}
+  constructor(private games: GameService, private router: Router) {}
   ngOnInit(): void {
     this.getData(1);
     this.getGameDetail(1);
@@ -47,8 +40,6 @@ export class OriginsComponent implements OnInit {
     try {
       const gameDetail = await firstValueFrom(this.games.getGameData(game_id));
       this.gameData = gameDetail;
-      this.gameDataArray = [gameDetail];
-      console.log(this.gameDataArray);
     } catch (error) {
       console.error('Error in the request', error);
     }
