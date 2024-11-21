@@ -49,42 +49,51 @@
   <!-- table -->
   <div>
     <h3>Requisiti di Sistema</h3>
-    <table mat-table [dataSource]="gameDataArray" class="mat-elevation-z8">
-      <!-- Data Column -->
-      <ng-container matColumnDef="data">
-        <th mat-header-cell *matHeaderCellDef>Data</th>
-        <td mat-cell *matCellDef="let game">OS</td>
-        <td mat-cell *matCellDef="let game">CPU</td>
-        <td mat-cell *matCellDef="let game">Ram</td>
-        <td mat-cell *matCellDef="let game">Scheda Grafica</td>
-        <td mat-cell *matCellDef="let game">Memoria Grafica</td>
-        <td mat-cell *matCellDef="let game">Hard Drive</td>
-        <td mat-cell *matCellDef="let game">Altro</td>
-      </ng-container>
-      <!-- PC Column -->
-      <ng-container matColumnDef="pc">
-        <th mat-header-cell *matHeaderCellDef>PC</th>
-        <td mat-cell *matCellDef="let game">{{ game.pc_system_OS }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.pc_system_CPU }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.pc_system_RAM }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.pc_graphics_card }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.pc_graphics_memory }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.pc_hard_drive }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.pc_other }}</td>
-      </ng-container>
-      <!-- MAC Column -->
-      <ng-container matColumnDef="mac">
-        <th mat-header-cell *matHeaderCellDef>MAC</th>
-        <td mat-cell *matCellDef="let game">{{ game.mac_system_OS }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.mac_system_CPU }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.mac_system_RAM }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.mac_graphics_card }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.mac_graphics_memory }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.mac_hard_drive }}</td>
-        <td mat-cell *matCellDef="let game">{{ game.mac_other }}</td>
-      </ng-container>
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    <table>
+      <th>
+        <tr>
+          <td></td>
+          <td>PC</td>
+          <td>MAC</td>
+        </tr>
+        <tbody>
+          <tr>
+            <td>OS</td>
+            <td [innerHTML]="gameData.pc_system_OS | backspace"></td>
+            <td>{{ gameData.mac_system_OS }}</td>
+          </tr>
+          <tr>
+            <td>CPU</td>
+            <td [innerHTML]="gameData.pc_system_CPU | backspace"></td>
+            <td>{{ gameData.mac_system_CPU }}</td>
+          </tr>
+          <tr>
+            <td>Ram</td>
+            <td [innerHTML]="gameData.pc_system_RAM | backspace"></td>
+            <td>{{ gameData.mac_system_RAM }}</td>
+          </tr>
+          <tr>
+            <td>Scheda Grafica</td>
+            <td [innerHTML]="gameData.pc_graphics_card | backspace"></td>
+            <td>{{ gameData.mac_graphics_card }}</td>
+          </tr>
+          <tr>
+            <td>Memoria Grafica</td>
+            <td [innerHTML]="gameData.pc_graphics_memory | backspace"></td>
+            <td>{{ gameData.mac_graphics_memory }}</td>
+          </tr>
+          <tr>
+            <td>Hard Drive</td>
+            <td [innerHTML]="gameData.pc_hard_drive | backspace"></td>
+            <td>{{ gameData.mac_hard_drive }}</td>
+          </tr>
+          <tr>
+            <td>Altro</td>
+            <td [innerHTML]="gameData.pc_other | backspace"></td>
+            <td>{{ gameData.mac_other }}</td>
+          </tr>
+        </tbody>
+      </th>
     </table>
   </div>
 </div>

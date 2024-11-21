@@ -21,6 +21,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { provideHttpClient } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { CharDetailComponent } from './components/char-detail/char-detail.component';
+import { BackspacePipe } from './pipes/backspace.pipe';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { CharDetailComponent } from './components/char-detail/char-detail.compon
     WelcomeComponent,
     NotfoundComponent,
     CharDetailComponent,
+    BackspacePipe,
   ],
   imports: [
     BrowserModule,

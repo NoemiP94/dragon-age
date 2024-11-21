@@ -11,3 +11,10 @@ table {
     width: 100%;
     background-color: transparent;
   }
+
+tr{
+    border-bottom: 1px solid white;
+}
+td{
+    padding: 1rem;
+}
