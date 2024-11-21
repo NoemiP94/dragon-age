@@ -1,4 +1,4 @@
-<div *ngIf="character" class="flex flex-col m-10">
+<div *ngIf="character" class="flex flex-col m-10 h-screen">
   <h1>{{ character.name }}</h1>
   <div class="flex items-center mt-16">
     <div class="w-4/12">
@@ -9,7 +9,7 @@
         class="rounded-full"
       />
     </div>
-    <div class="ms-5 text-2xl w-4/12">
+    <div class="ms-5 text-2xl w-4/12 font">
       <p>{{ character.race }} - {{ character.gender }}</p>
 
       <p>Classe: {{ character.class }}</p>
@@ -42,7 +42,7 @@
       ></ng-template>
     </div>
     <div class="w-4/12">
-      <p class="text-xl">{{ character.description }}</p>
+      <p class="text-xl font">{{ character.description }}</p>
     </div>
   </div>
 </div>
