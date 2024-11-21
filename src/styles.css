@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,15 +14,19 @@ body{
     height: 100% !important;
     color:white;
     margin: 0; 
-    font-family: 'CustomFont', sans-serif !important;
+    font-family: "Geist Mono", monospace;
     background-image: url(../public/bg-tile.jpg);
 
 }
 html, body { height: 100%; }
 
-h1, h2, h3, h4,h5,h6, table,th, td{
+h1, h2, h3, h4,h5,h6, table{
     font-family: 'CustomFont', sans-serif !important; 
     color: white;
+}
+
+.font{
+    font-family: 'CustomFont', sans-serif !important;  
 }
 
 
