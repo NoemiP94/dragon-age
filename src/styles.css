@@ -14,7 +14,7 @@ body{
     height: 100% !important;
     color:white;
     margin: 0; 
-    font-family: "Geist Mono", monospace;
+    font-family: "Geist Mono", monospace !important;
     background-image: url(../public/bg-tile.jpg);
 
 }
