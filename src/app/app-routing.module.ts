@@ -20,7 +20,7 @@ const routes: Routes = [
       { path: 'da2', component: DaIIComponent },
       { path: 'inquisition', component: InquisitionComponent },
       { path: 'welcome', component: WelcomeComponent },
-      { path: 'goal', component: GoalsComponent },
+      { path: 'goal/:id', component: GoalsComponent },
     ],
   },
   { path: 'detail/:id', component: CharDetailComponent },

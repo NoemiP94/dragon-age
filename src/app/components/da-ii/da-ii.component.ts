@@ -11,11 +11,12 @@ import { Router } from '@angular/router';
 export class DaIIComponent implements OnInit {
   characterData: any[] = [];
   gameData: any;
+  selectedGameId = 2;
 
   constructor(private games: GameService, private router: Router) {}
   ngOnInit(): void {
-    this.getData(2);
-    this.getGameDetail(2);
+    this.getData(this.selectedGameId);
+    this.getGameDetail(this.selectedGameId);
   }
 
   async getData(game_id: number): Promise<void> {
@@ -41,5 +42,9 @@ export class DaIIComponent implements OnInit {
     } catch (error) {
       console.error('Error in the request', error);
     }
+  }
+
+  goToGoals() {
+    this.router.navigate(['/goal', this.selectedGameId]);
   }
 }

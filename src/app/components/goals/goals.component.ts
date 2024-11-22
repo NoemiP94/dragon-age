@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { GameService } from '../../services/game.service';
 import { firstValueFrom } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-goals',
@@ -8,12 +9,16 @@ import { firstValueFrom } from 'rxjs';
   styleUrl: './goals.component.css',
 })
 export class GoalsComponent implements OnInit {
+  @Input() gameId!: number;
   goalData: any;
 
-  constructor(private games: GameService) {}
+  constructor(private games: GameService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.getGoalByGame(1);
+    this.route.params.subscribe((params) => {
+      this.gameId = +params['id'];
+    });
+    this.getGoalByGame(this.gameId);
   }
 
   async getGoalByGame(game_id: number): Promise<void> {

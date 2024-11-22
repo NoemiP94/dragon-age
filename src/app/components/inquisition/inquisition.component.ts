@@ -11,12 +11,13 @@ import { Router } from '@angular/router';
 export class InquisitionComponent implements OnInit {
   characterData: any[] = [];
   gameData: any;
+  selectedGameId = 3;
 
   constructor(private games: GameService, private router: Router) {}
 
   ngOnInit(): void {
-    this.getData(3);
-    this.getGameDetail(3);
+    this.getData(this.selectedGameId);
+    this.getGameDetail(this.selectedGameId);
   }
   async getData(game_id: number): Promise<void> {
     try {
@@ -40,5 +41,9 @@ export class InquisitionComponent implements OnInit {
     } catch (error) {
       console.error('Error in the request', error);
     }
+  }
+
+  goToGoals() {
+    this.router.navigate(['/goal', this.selectedGameId]);
   }
 }
