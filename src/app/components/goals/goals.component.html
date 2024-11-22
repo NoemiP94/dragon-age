@@ -1,0 +1,6 @@
+<div *ngIf="goalData">
+  <div *ngFor="let goal of goalData">
+    <p>{{ goal.name }}</p>
+    <img [src]="getImageBase64(goal.image_base64)" alt="goal image" />
+  </div>
+</div>

@@ -7,6 +7,7 @@ import { InquisitionComponent } from './components/inquisition/inquisition.compo
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { CharDetailComponent } from './components/char-detail/char-detail.component';
+import { GoalsComponent } from './components/goals/goals.component';
 
 const routes: Routes = [
   {
@@ -19,6 +20,7 @@ const routes: Routes = [
       { path: 'da2', component: DaIIComponent },
       { path: 'inquisition', component: InquisitionComponent },
       { path: 'welcome', component: WelcomeComponent },
+      { path: 'goal', component: GoalsComponent },
     ],
   },
   { path: 'detail/:id', component: CharDetailComponent },

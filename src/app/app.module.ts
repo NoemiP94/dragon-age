@@ -23,6 +23,7 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { CharDetailComponent } from './components/char-detail/char-detail.component';
 import { BackspacePipe } from './pipes/backspace.pipe';
 import { FooterComponent } from './components/footer/footer.component';
+import { GoalsComponent } from './components/goals/goals.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { FooterComponent } from './components/footer/footer.component';
     CharDetailComponent,
     BackspacePipe,
     FooterComponent,
+    GoalsComponent,
   ],
   imports: [
     BrowserModule,
