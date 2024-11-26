@@ -46,4 +46,8 @@ export class InquisitionComponent implements OnInit {
   goToGoals() {
     this.router.navigate(['/goal', this.selectedGameId]);
   }
+
+  getImageBase64(imageBase64: string): string {
+    return `data:image/jpeg;base64,${imageBase64}`;
+  }
 }

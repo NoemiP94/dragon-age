@@ -3,9 +3,9 @@
     <div>
       <img
         mat-card-image
-        [src]="gameData.image_url"
+        [src]="getImageBase64(gameData.image_base64)"
         alt="{{ gameData.title }}"
-        *ngIf="gameData.image_url"
+        *ngIf="gameData.image_base64"
         class="pt-3"
         style="height: 300px; width: 200px"
       />
@@ -38,9 +38,9 @@
         <a [routerLink]="['/detail', character.id]" class="text-center">
           <img
             mat-card-image
-            [src]="character.image_url"
+            [src]="getImageBase64(character.image_base64)"
             alt="{{ character.name }}"
-            *ngIf="character.image_url"
+            *ngIf="character.image_base64"
             class="pt-5"
             style="height: 232px; width: 156px"
           />

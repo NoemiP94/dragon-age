@@ -32,4 +32,8 @@ export class CharDetailComponent implements OnInit {
       console.error('Error in the request', error);
     }
   }
+
+  getImageBase64(imageBase64: string): string {
+    return `data:image/jpeg;base64,${imageBase64}`;
+  }
 }
