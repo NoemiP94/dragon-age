@@ -1,7 +1,25 @@
-<div *ngIf="goalData">
-  <div *ngFor="let goal of goalData">
-    <p>ID gioco : {{ gameId }}</p>
-    <p>{{ goal.name }}</p>
-    <img [src]="getImageBase64(goal.image_base64)" alt="goal image" />
+<div>
+  <p>obiettivi base</p>
+  <div *ngIf="goalData">
+    <div *ngFor="let goal of goalData">
+      <p>ID gioco : {{ gameId }}</p>
+      <p>{{ goal.name }}</p>
+      <img [src]="getImageBase64(goal.image_base64)" alt="goal image" />
+    </div>
+  </div>
+</div>
+<div>
+  <p>obiettivi dei dlc</p>
+  <!-- lista dlc da cui prendo l'id -->
+  <div *ngIf="dlcData && dlcData.length > 0">
+    <div *ngFor="let dlc of dlcData">
+      <p>ID dlc: {{ dlc.id }}</p>
+      <p>Nome: {{ dlc.name }}</p>
+      <div *ngIf="goalDlcData[dlc.id] && goalDlcData[dlc.id].length > 0">
+        <div *ngFor="let goal of goalDlcData[dlc.id]">
+          <p>Goal: {{ goal.name }}</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

@@ -9,6 +9,7 @@ import { WelcomeComponent } from './components/welcome/welcome.component';
 import { CharDetailComponent } from './components/char-detail/char-detail.component';
 import { GoalsComponent } from './components/goals/goals.component';
 import { AwakeningComponent } from './components/awakening/awakening.component';
+import { DlcComponent } from './components/dlc/dlc.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'inquisition', component: InquisitionComponent },
       { path: 'welcome', component: WelcomeComponent },
       { path: 'goal/:id', component: GoalsComponent },
+      { path: 'dlc/:id', component: DlcComponent },
     ],
   },
   { path: 'detail/:id', component: CharDetailComponent },

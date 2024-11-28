@@ -25,6 +25,7 @@ import { BackspacePipe } from './pipes/backspace.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { GoalsComponent } from './components/goals/goals.component';
 import { AwakeningComponent } from './components/awakening/awakening.component';
+import { DlcComponent } from './components/dlc/dlc.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { AwakeningComponent } from './components/awakening/awakening.component';
     FooterComponent,
     GoalsComponent,
     AwakeningComponent,
+    DlcComponent,
   ],
   imports: [
     BrowserModule,

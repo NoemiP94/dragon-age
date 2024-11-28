@@ -53,4 +53,8 @@ export class OriginsComponent implements OnInit {
   getImageBase64(imageBase64: string): string {
     return `data:image/jpeg;base64,${imageBase64}`;
   }
+
+  goToDlc() {
+    this.router.navigate(['/dlc', this.selectedGameId]);
+  }
 }
