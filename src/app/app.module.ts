@@ -24,6 +24,7 @@ import { CharDetailComponent } from './components/char-detail/char-detail.compon
 import { BackspacePipe } from './pipes/backspace.pipe';
 import { FooterComponent } from './components/footer/footer.component';
 import { GoalsComponent } from './components/goals/goals.component';
+import { AwakeningComponent } from './components/awakening/awakening.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { GoalsComponent } from './components/goals/goals.component';
     BackspacePipe,
     FooterComponent,
     GoalsComponent,
+    AwakeningComponent,
   ],
   imports: [
     BrowserModule,

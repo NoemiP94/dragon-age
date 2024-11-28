@@ -8,6 +8,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { CharDetailComponent } from './components/char-detail/char-detail.component';
 import { GoalsComponent } from './components/goals/goals.component';
+import { AwakeningComponent } from './components/awakening/awakening.component';
 
 const routes: Routes = [
   {
@@ -17,6 +18,7 @@ const routes: Routes = [
       { path: '', redirectTo: 'welcome', pathMatch: 'full' },
       { path: 'origins', component: OriginsComponent },
       { path: 'detail/:id', component: CharDetailComponent },
+      { path: 'awakening', component: AwakeningComponent },
       { path: 'da2', component: DaIIComponent },
       { path: 'inquisition', component: InquisitionComponent },
       { path: 'welcome', component: WelcomeComponent },
