@@ -10,13 +10,14 @@ th,tr,td{
 }
 
 table{
-    border: 1px solid #523F35!important;
-    border-spacing: 1px!important;
+    border: 2px solid #523F35!important;
+    border-spacing: 1px !important;
 }
 
 th{
     background-image: url(../../assets/table_background.webp)!important;
-    border: 1px solid #523F35!important;
+    border: 2px outset #523F35!important;
+    
     font-family: 'CustomFont', sans-serif !important;
 }
 

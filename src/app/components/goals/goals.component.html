@@ -1,9 +1,6 @@
 <div class="m-5">
   <h2>Obiettivi</h2>
   <table mat-table [dataSource]="goalData" class="custom-table">
-    <!--- Note that these columns can be defined in any order.
-          The actual rendered columns are set as a property on the row definition" -->
-
     <!--  name -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef class="text-xl">Nome</th>
@@ -46,18 +43,74 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
   </table>
-</div>
-<div>
-  <p>obiettivi dei dlc</p>
-  <!-- lista dlc da cui prendo l'id -->
   <div *ngIf="dlcData && dlcData.length > 0">
-    <div *ngFor="let dlc of dlcData" style="border: 1px solid white">
-      <div *ngIf="goalDlcData[dlc.id] && goalDlcData[dlc.id].length > 0">
-        <p>ID dlc: {{ dlc.id }}</p>
-        <p>Nome: {{ dlc.name }}</p>
-        <div *ngIf="goalDlcData[dlc.id] && goalDlcData[dlc.id].length > 0">
-          <div *ngFor="let goal of goalDlcData[dlc.id]">
-            <p>Goal: {{ goal.name }}</p>
+    <h3 class="pt-12">Contenuti Aggiuntivi</h3>
+    <!-- lista dlc da cui prendo l'id -->
+    <div *ngIf="dlcData && dlcData.length > 0">
+      <div *ngFor="let dlc of dlcData">
+        <div
+          *ngIf="goalDlcData[dlc.id] && goalDlcData[dlc.id].length > 0"
+          class="py-4"
+        >
+          <p class="italic text-xl">{{ dlc.name }}</p>
+          <div *ngIf="goalDlcData[dlc.id] && goalDlcData[dlc.id].length > 0">
+            <table
+              mat-table
+              [dataSource]="goalDlcData[dlc.id]"
+              class="custom-table"
+            >
+              <!--  name -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef class="text-xl">Nome</th>
+                <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+              </ng-container>
+
+              <!-- requirements -->
+              <ng-container matColumnDef="requirements">
+                <th mat-header-cell *matHeaderCellDef class="text-xl">
+                  Requisiti
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.requirements }}
+                </td>
+              </ng-container>
+
+              <!-- points -->
+              <ng-container matColumnDef="points">
+                <th mat-header-cell *matHeaderCellDef class="text-xl">
+                  Punti obiettivo
+                </th>
+                <td mat-cell *matCellDef="let element">{{ element.points }}</td>
+              </ng-container>
+
+              <!-- award_type -->
+              <ng-container matColumnDef="award_type">
+                <th mat-header-cell *matHeaderCellDef class="text-xl">
+                  Tipologia di trofeo
+                </th>
+                <td mat-cell *matCellDef="let element">
+                  {{ element.award_type }}
+                </td>
+              </ng-container>
+
+              <!-- image_base64 -->
+              <ng-container matColumnDef="image_base64">
+                <th mat-header-cell *matHeaderCellDef class="text-xl">
+                  Immagine
+                </th>
+                <td mat-cell *matCellDef="let element" class="text-center">
+                  <img
+                    [src]="getImageBase64(element.image_base64)"
+                    alt="{{ element.name }}"
+                    style="width: 55px"
+                    class="py-2"
+                  />
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
           </div>
         </div>
       </div>
