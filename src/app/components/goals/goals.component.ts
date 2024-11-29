@@ -31,7 +31,7 @@ export class GoalsComponent implements OnInit {
     this.getDlcByGame(this.gameId)
       .then(() => {
         if (this.dlcData && this.dlcData.length > 0) {
-          this.dlcData.forEach((dlc) =>
+          this.dlcData.forEach((dlc: any) =>
             this.getGoalByGameAndDlc(this.gameId, dlc.id)
           );
         }
