@@ -1,1 +1,15 @@
-<p>dlc works!</p>
+<div *ngIf="dlcData">
+  <h2>Contenuti Aggiuntivi</h2>
+  <div class="flex flex-col my-5" *ngFor="let dlc of dlcData">
+    <div>{{ dlc.name }}</div>
+    <div class="flex">
+      <div>
+        <img [src]="getImageBase64(dlc.image_base64)" alt="{{ dlc.name }}" />
+      </div>
+      <div class="flex flex-col">
+        <div><p [innerHTML]="dlc.year | backspace"></p></div>
+        <div><p [innerHTML]="dlc.content | backspace"></p></div>
+      </div>
+    </div>
+  </div>
+</div>

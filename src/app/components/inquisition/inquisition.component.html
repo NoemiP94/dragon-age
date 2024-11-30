@@ -22,7 +22,7 @@
     <h3>Trama</h3>
     <p [innerHTML]="gameData.storyline | backspace"></p>
   </div>
-  <div class="mt-5">
+  <div class="mt-5 pe-10">
     <h3>Gameplay</h3>
     <p [innerHTML]="gameData.gameplay | backspace"></p>
   </div>
@@ -52,7 +52,7 @@
   <!-- DLC -->
   <div>
     <h3>DLC</h3>
-    <!-- manda alla pagina dei dlc -->
+    <button (click)="goToDlc()">Vedi i contenuti aggiuntivi del gioco</button>
   </div>
   <!-- goals -->
   <div>
