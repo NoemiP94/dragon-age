@@ -1,0 +1,9 @@
+.title{
+    background-image: url(../../assets/table_background.webp)!important;
+    border: 2px solid #523F35!important;
+}
+
+.img-border{
+    border: 2px solid #523F35!important;
+    padding: 1em !important; 
+}
