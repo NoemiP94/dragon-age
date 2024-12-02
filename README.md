@@ -1,27 +1,25 @@
-# DragonAge
+# 🐉 Dragon Age (front-end)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+This is the front end part of my project about Dragon Age, the popular fantasy videogame. Here you can see all info about this game (except the last Dragon Age: The Veilguard).
+ 
 
-## Development server
+## ⚙️How to install
+This project is developed using **Angular**,**Angulat Material**  and **TailwindCSS**.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1) Clone this repository in your PC and open with your Visual Studio Code
+2) Add **nodemodules** folder:
+```bash
+npm install
+```
+3) Download the back end repository (https://github.com/NoemiP94/da_be) and follow the instruction to install it.
+4) Start the project:
+```bash
+ng serve
+```
+5) Open on http://localhost:4200/
 
-## Code scaffolding
+### 🖊️ Author
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Noemi Pusceddu 🦋
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+🧑‍💻 [LinkedIn](https://www.linkedin.com/in/noemi-pusceddu-developer/)
