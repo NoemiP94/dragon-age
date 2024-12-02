@@ -66,6 +66,10 @@ tr td:last-child{
     cursor: pointer;
   }
 
+.scroll-to-top:hover{
+    background: rgba(114, 114, 115, 0.17);
+}
+
   .fade-in-bck {
 	-webkit-animation: fade-in-bck 0.9s linear both;
 	        animation: fade-in-bck 0.9s linear both;
@@ -119,6 +123,11 @@ tr td:last-child{
   .move:hover {
     --_p: 75%;
     filter: grayscale(0%);
+  }
+
+  a:hover{
+    cursor: pointer;
+    color:#654e42;
   }
   
 

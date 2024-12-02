@@ -4,4 +4,5 @@
 
 .active{
     background: linear-gradient(270deg, rgba(0,0,0,1) 0%, rgba(55,49,49,0.4458158263305322) 76%);
+    color: #be9433;
 }
