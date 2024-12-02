@@ -1,8 +1,5 @@
-.custom-card{
-    background: rgba(86, 86, 87, 0.17);
-    border-radius: 10px;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.377);
-    backdrop-filter: blur(4.4px);
-    -webkit-backdrop-filter: blur(4.4px);
-    border: 1px solid rgba(31, 32, 33, 1);
+.mat-mdc-card{
+    background-color: transparent !important;
+    box-shadow: none;
 }
+

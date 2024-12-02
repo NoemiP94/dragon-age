@@ -57,4 +57,8 @@ export class OriginsComponent implements OnInit {
   goToDlc() {
     this.router.navigate(['/dlc', this.selectedGameId]);
   }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

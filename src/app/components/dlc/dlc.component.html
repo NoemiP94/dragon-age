@@ -1,4 +1,4 @@
-<div *ngIf="dlcData" class="m-5">
+<div *ngIf="dlcData" class="m-5 fade-in-bck">
   <h2>Contenuti Aggiuntivi</h2>
   <div class="flex flex-col my-6 mx-5" *ngFor="let dlc of dlcData">
     <div class="title py-5 ps-5 font text-xl">{{ dlc.name }}</div>
@@ -22,5 +22,8 @@
         <div><p [innerHTML]="dlc.content | backspace"></p></div>
       </div>
     </div>
+  </div>
+  <div class="flex justify-center mt-10">
+    <button class="scroll-to-top" (click)="scrollToTop()">Torna su</button>
   </div>
 </div>

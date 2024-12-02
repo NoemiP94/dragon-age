@@ -54,4 +54,8 @@ export class InquisitionComponent implements OnInit {
   goToDlc() {
     this.router.navigate(['/dlc', this.selectedGameId]);
   }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

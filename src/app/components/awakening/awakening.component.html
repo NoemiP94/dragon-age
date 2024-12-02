@@ -1,4 +1,4 @@
-<div *ngIf="gameData" class="ms-5 ps-3">
+<div *ngIf="gameData" class="ms-5 ps-3 fade-in-bck">
   <div class="flex mt-5">
     <div>
       <img
@@ -32,7 +32,7 @@
     <div class="flex flex-wrap mt-5">
       <mat-card
         *ngFor="let character of characterData"
-        class="w-1/6 my-5 mx-2 h-72 flex flex-col items-center justify-between custom-card"
+        class="w-1/6 my-5 mx-3 h-72 flex flex-col items-center justify-between move"
         (click)="getDetail(character.id)"
       >
         <a [routerLink]="['/detail', character.id]" class="text-center">
@@ -44,7 +44,7 @@
             class="pt-5"
             style="height: 232px; width: 156px"
           />
-          <p class="py-2 font">{{ character.name }}</p>
+          <p class="font">{{ character.name }}</p>
         </a>
       </mat-card>
     </div>
@@ -53,5 +53,8 @@
   <div>
     <h3>Obiettivi</h3>
     <button (click)="goToGoals()">Vedi obiettivi del gioco</button>
+  </div>
+  <div class="flex justify-center mt-10">
+    <button class="scroll-to-top" (click)="scrollToTop()">Torna su</button>
   </div>
 </div>

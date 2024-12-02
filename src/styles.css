@@ -54,7 +54,73 @@ tr td:last-child{
     border-left: 1px solid white;
 }
 
+.scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background: rgba(86, 86, 87, 0.17);
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.377);
+    color: white;
+    border: 1px solid #523F35!important;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
+  .fade-in-bck {
+	-webkit-animation: fade-in-bck 0.9s linear both;
+	        animation: fade-in-bck 0.9s linear both;
+}
+ @-webkit-keyframes fade-in-bck {
+    0% {
+      -webkit-transform: translateZ(80px);
+              transform: translateZ(80px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-bck {
+    0% {
+      -webkit-transform: translateZ(80px);
+              transform: translateZ(80px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateZ(0);
+              transform: translateZ(0);
+      opacity: 1;
+    }
+  }
+
+  /* .card{background: rgba(86, 86, 87, 0.17)!important;} */
+
+  .move {
+    --g: 2px;     /* the gap */
+    --b: 12px;    /* border thickness*/
+    --c: #523F35; /* the color */
+    
+    
+    
+    padding: calc(var(--g) + var(--b));
+    --_c: #0000 0 25%, var(--c) 0 50%;
+    --_g1: repeating-linear-gradient(90deg ,var(--_c)) repeat-x;
+    --_g2: repeating-linear-gradient(180deg,var(--_c)) repeat-y;
+    background:
+      var(--_g1) var(--_p, 25%) 0   ,var(--_g2) 0    var(--_p,125%),
+      var(--_g1) var(--_p,125%) 100%,var(--_g2) 100% var(--_p, 25%);
+    background-size: 200% var(--b),var(--b) 200%;
+    cursor: pointer;
+    filter: grayscale(50%);
+    transition: .3s;
+  }
+  .move:hover {
+    --_p: 75%;
+    filter: grayscale(0%);
+  }
+  
 
 
 

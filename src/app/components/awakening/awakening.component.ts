@@ -53,4 +53,8 @@ export class AwakeningComponent implements OnInit {
   getImageBase64(imageBase64: string): string {
     return `data:image/jpeg;base64,${imageBase64}`;
   }
+
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }
